@@ -1,5 +1,6 @@
 import 'package:telegram_web_app/telegram_web_app.dart';
 import 'telegram_web_wrapper.dart';
+import 'dart:js' as js;
 
 class TelegramWebWrapperImpl implements TelegramWebWrapper {
   @override
@@ -14,6 +15,9 @@ class TelegramWebWrapperImpl implements TelegramWebWrapper {
 
   @override
   void disableScroll() {
-    // TODO: implement disableScroll
+    js.context['Telegram']['WebApp'].callMethod('ready');
+
+    // Отключаем вертикальный свайп‑закрытие
+    js.context['Telegram']['WebApp'].callMethod('disableVerticalSwipes');
   }
 }
