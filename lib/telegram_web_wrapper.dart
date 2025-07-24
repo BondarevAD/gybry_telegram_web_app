@@ -4,4 +4,6 @@ abstract class TelegramWebWrapper {
   void ready();
 
   String? get userFirstName;
+
+  void disableScroll();
 }

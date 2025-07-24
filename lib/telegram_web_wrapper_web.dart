@@ -11,4 +11,9 @@ class TelegramWebWrapperImpl implements TelegramWebWrapper {
   @override
   String? get userFirstName =>
       TelegramWebApp.instance.initDataUnsafe!.user?.firstName;
+
+  @override
+  void disableScroll() {
+    // TODO: implement disableScroll
+  }
 }
